@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test';
+export default defineConfig({timeout:60000,expect:{timeout:15000},testDir:'tests',testMatch:'*.spec.ts',use:{baseURL:'http://127.0.0.1:4173',headless:true,launchOptions:process.env.CHROME_PATH?{executablePath:process.env.CHROME_PATH}:{}},webServer:{command:'npx vite --mode integration --host 127.0.0.1 --port 4173',url:'http://127.0.0.1:4173',reuseExistingServer:false}});
